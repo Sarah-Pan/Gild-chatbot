@@ -1,3 +1,4 @@
+from utils import plot_word2vec_2d
 import streamlit as st
 from openai import OpenAI
 import time
@@ -16,7 +17,7 @@ def main():
     st.set_page_config(
         page_title='K-Assistant - The Residemy Agent',
         layout='wide',
-        initial_sidebar_state='auto',
+        initial_sidebar_state='expanded',
         menu_items={
             'Get Help': 'https://streamlit.io/',
             'Report a bug': 'https://github.com',
@@ -39,7 +40,7 @@ def main():
         st_c_1 = st.container(border=True)
         with st_c_1:
             st.image("https://www.w3schools.com/howto/img_avatar.png")
-
+        
     st_c_chat = st.container(border=True)
 
     if "messages" not in st.session_state:
